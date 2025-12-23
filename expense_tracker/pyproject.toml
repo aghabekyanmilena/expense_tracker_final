@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "expense-tracker-milena"
+version = "0.1.0"
+description = "A simple terminal-based expense tracker using Python and SQLite"
+authors = [{name = "Milena Aghabekyan", email = "your_email@example.com"}]
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "YSU" }
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
