@@ -1,0 +1,2 @@
+[console_scripts]
+expense-tracker = src.main:main

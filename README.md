@@ -1,0 +1,34 @@
+# Expense Tracker
+
+This project is a Python-based Expense Tracker application that allows users to record, manage, and analyze personal expenses. It supports persistent storage using an SQLite database, clean object-oriented design, and a modular project structure. The project exposes a programmatic Python API for creating, reading, updating, and deleting expenses and categories. It also demonstrates meaningful use of concurrency through multithreading and multiprocessing during database initialization. The application is packaged as a real Python package and can be installed via pip.
+
+---
+
+The project uses only Python standard library modules, so no additional dependencies are required.
+
+---
+
+## TestPyPi
+[PyPI version](https://test.pypi.org/project/expense-tracker-uniproject/)
+
+## How to run
+
+python -m src.main
+
+## Database Initialization
+
+Before using the application, the database must be initialized.
+
+The initialization process demonstrates **concurrency**:
+
+* **Multiprocessing** is used for CPU-bound dummy data generation
+* **Multithreading** is used for I/O-bound database insertion
+
+## Python API Usage
+
+The project provides a Python API for all operations.
+
+## Author
+
+Milena Aghabekyan
+Faculty of Physics – Data Mining in Physics and Artificial Intelligence
