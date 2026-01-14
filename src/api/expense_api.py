@@ -33,3 +33,23 @@ class ExpenseAPI:
             "SELECT SUM(amount) FROM expenses"
         ).fetchone()[0]
         return {"total": total or 0}
+
+    def get_expenses_by_date_range(self, start_date, end_date): # new function
+        rows = self.db.execute(
+            """
+            SELECT * FROM expenses
+            WHERE date BETWEEN ? AND ?
+            """,
+            (start_date, end_date)
+        ).fetchall()
+        return [Expense(r[1], r[2], r[3], r[4], r[0]) for r in rows]
+
+    def category_summary(self): # new function
+        rows = self.db.execute(
+            """
+            SELECT category, SUM(amount) as total
+            FROM expenses
+            GROUP BY category
+            """
+        ).fetchall()
+        return {category: total for category, total in rows}
